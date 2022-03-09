@@ -14,12 +14,14 @@ def convert_temp(unit_in, unit_out, temp):
       convert_temp("c", "f", 0)  =>  32.0
       convert_temp("f", "c", 212) => 100.0
     """
-    # if unit_in != "c" or "f":
-    #   return print('not a valid unit')
+    if unit_in != "c" and unit_in != "f":
+      return print('not a valid unit')
+    if unit_out != "c" and unit_out != "f":
+      return print('not a valid unit')
     if unit_in == unit_out:
       return temp
     if unit_in == "c":
-      unit_out = (temp * 9/5) + 32
+      unit_out = (temp * (9/5)) + 32
       return unit_out
     if unit_in == "f":
       unit_out = (temp - 32) * 5/9 
